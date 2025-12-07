@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julius Kristian - Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        // Konfigurasi Tailwind untuk warna kustom (Konsisten dengan tema Hijau)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'page-bg': 'rgb(138, 218, 138)', 
+                        'primary-dark': '#047857', 
+                        'primary-light': '#10b981', 
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .body-bg {
+            background-color: rgb(138, 218, 138); 
+        }
+        /* Gaya error */
+        .input-error {
+            border-color: #ef4444 !important; /* Warna merah */
+            box-shadow: 0 0 0 2px #f87171 !important; 
+        }
+        /* Kelas form-input yang dimodifikasi untuk border yang sangat terlihat */
+        .form-input {
+             /* Menggunakan border-4 dan warna gray-500 untuk visibility tinggi */
+             @apply w-full px-4 py-3 border-4 border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-primary-light transition;
+        }
+    </style>
+</head>
+<body class="body-bg font-sans text-gray-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-extrabold text-2xl text-primary-dark">
+                    J.K. Portfolio
+                </div>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">About</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Gallery</a> 
+                    <a href="calculator.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Calculator</a>
+                    <a href="registration.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-primary-dark text-white shadow-md">Registration</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center py-10">
+        <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-lg">
+            <h1 class="text-3xl font-bold text-center text-primary-dark mb-8">Formulir Pendaftaran</h1>
+            
+            <form id="registrationForm" onsubmit="return validateForm(event)">
+                
+                <div class="mb-4">
+                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Nama Depan (Max 40)</label>
+                    <input type="text" id="firstName" name="firstName" maxlength="40" class="form-input" required>
+                    <span id="firstNameError" class="text-xs text-red-500 mt-1 block"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Nama Belakang (Max 40)</label>
+                    <input type="text" id="lastName" name="lastName" maxlength="40" class="form-input" required>
+                    <span id="lastNameError" class="text-xs text-red-500 mt-1 block"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="nim" class="block text-sm font-medium text-gray-700 mb-1">NIM (Max 7 Digit)</label>
+                    <input type="text" id="nim" name="nim" maxlength="7" inputmode="numeric" class="form-input" required> 
+                    <span id="nimError" class="text-xs text-red-500 mt-1 block"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon (Max 15 Digit)</label>
+                    <input type="text" id="phone" name="phone" maxlength="15" inputmode="tel" class="form-input" required>
+                    <span id="phoneError" class="text-xs text-red-500 mt-1 block"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email (Hanya @unai.edu)</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                    <span id="emailError" class="text-xs text-red-500 mt-1 block"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password (8-16 Karakter, Kombinasi Huruf Besar, Kecil, dan Angka. Tanpa Simbol)</label>
+                    <input type="password" id="password" name="password" maxlength="16" class="form-input" required>
+                    <span id="passwordError" class="text-xs text-red-500 mt-1 block"></span>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-primary-dark text-white py-3 px-4 rounded-lg font-semibold hover:bg-green-700 transition duration-300 shadow-md">
+                    Daftar Sekarang
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white p-6 mt-auto">
+        <div class="max-w-7xl mx-auto text-center text-sm">
+             &copy; <span id="currentYear"></span> Julius Kristian - C - 2025 | Sistem Informasi UNAI
+        </div>
+    </footer>
+    
+    <script src="validation.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

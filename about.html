@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julius Kristian - About Me | Sistem Informasi UNAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'page-bg': 'rgb(138, 218, 138)', 
+                        'primary-dark': '#047857', 
+                        'primary-light': '#10b981', 
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .body-bg {
+            background-color: rgb(138, 218, 138); 
+        }
+        
+        .main-photo {
+            width: 300px; 
+            height: 300px;
+            object-fit: cover;
+            border-radius: 1rem; 
+            border: 6px solid #f3f4f6; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+        }
+        .creative-card {
+            border-top: 4px solid #f97316; 
+        }
+    </style>
+</head>
+<body class="body-bg font-sans text-gray-800">
+
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-extrabold text-2xl text-primary-dark">
+                    J.K. Portfolio
+                </div>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-primary-dark text-white shadow-md">About</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Gallery</a> 
+                    <a href="calculator.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Calculator</a>
+                    <a href="registration.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Registration</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-12 px-8 sm:px-16 lg:px-32"> 
+        
+        <header class="text-center mb-12 max-w-5xl mx-auto">
+             <h1 class="text-5xl font-extrabold text-primary-dark mb-4 border-b-4 border-primary-light pb-2">Tentang Julius Kristian</h1>
+        </header>
+
+        <section class="bg-white p-10 rounded-xl shadow-2xl mb-16 max-w-5xl mx-auto">
+            <div class="md:flex md:space-x-10 items-start">
+                
+                <div class="mb-6 md:mb-0 flex-shrink-0">
+                    <img src="images/2.jpg" alt="Julius Kristian" class="main-photo">
+                </div>
+                
+                <div>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Halo! Saya Julius Kristian, seorang mahasiswa Sistem Informasi yang memiliki gairah besar dalam menemukan efisiensi dan menghadirkan solusi. Bagi saya, teknologi bukan hanya alat, melainkan sebuah bahasa untuk mengkomunikasikan nilai bisnis. Saya memulai setiap proyek dengan pertanyaan, 'Apa masalah sebenarnya?', dan baru kemudian merancang jalur yang jelas menuju tujuan. Saya percaya, kemampuan analisis yang kuat, dikombinasikan dengan pemahaman mendalam tentang kebutuhan end-user, adalah kunci keberhasilan digital.
+                    </p>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h3 class="font-bold text-xl text-primary-dark mb-2">Detail Singkat</h3>
+                        <ul class="space-y-1 text-gray-600">
+                            <li><strong>NIM:</strong> 2582010</li>
+                            <li><strong>Tanggal Lahir:</strong> 22 Juli 2004</li>
+                            <li><strong>Pendidikan:</strong> Sistem Informasi, Universitas Advent Indonesia</li>
+                            <li><strong>Minat:</strong> Data Mining, Analisis Bisnis, Kegiatan Alam Bebas,</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-gray-800 mb-8">Kepribadian & Nilai yang Saya Pegang</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white creative-card p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-3 text-orange-500">🧐</div>
+                    <h4 class="font-bold text-xl mb-2 text-gray-800">Pencari Jawaban (Curiosity)</h4>
+                    <p class="text-sm text-gray-600">Saya tidak puas dengan jawaban di permukaan. Saya menggali hingga menemukan akar masalah, sebuah kunci dalam analisis yang mendalam.</p>
+                </div>
+
+                <div class="bg-white creative-card p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-3 text-red-500">🏔️</div>
+                    <h4 class="font-bold text-xl mb-2 text-gray-800">Ketahanan (Resilience)</h4>
+                    <p class="text-sm text-gray-600">Seperti mendaki gunung, proyek besar memerlukan ketahanan. Saya selalu siap menghadapi tantangan teknis dan hambatan.</p>
+                </div>
+
+                <div class="bg-white creative-card p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-3 text-blue-500">🗣️</div>
+                    <h4 class="font-bold text-xl mb-2 text-gray-800">Komunikasi yang Jelas (Clarity)</h4>
+                    <p class="text-sm text-gray-600">Mampu menerjemahkan geek-speak menjadi bahasa bisnis yang dimengerti semua orang adalah keahlian utama saya.</p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-900 text-white p-6 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-sm">
+             &copy; <span id="currentYear"></span> Julius Kristian | Sistem Informasi UNAI
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

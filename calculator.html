@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julius Kristian - Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'page-bg': 'rgb(138, 218, 138)', 
+                        'primary-dark': '#047857', 
+                        'primary-light': '#10b981', 
+                        'calc-display': '#1f2937',
+                        'calc-btn-bg': '#374151', 
+                        'calc-op-bg': '#f59e0b', 
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        
+        .body-bg {
+            background-color: rgb(138, 218, 138); 
+        }
+        
+        .kalkulator {
+            width: min(92vw, 420px); 
+        }
+        .display {
+            
+            background-color: #1f2937; 
+            color: white; 
+            text-align: right;
+            font-size: 1.875rem; 
+        }
+        .tombol2 {
+           
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem; 
+        }
+        .wide {
+          
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body class="body-bg font-sans text-gray-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-extrabold text-2xl text-primary-dark">
+                    J.K. Portfolio
+                </div>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">About</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Gallery</a> 
+                    <a href="calculator.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-primary-dark text-white shadow-md">Calculator</a>
+                    <a href="registration.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Registration</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="flex-grow flex items-center justify-center py-10">
+        <section class="kalkulator p-6 bg-gray-700 shadow-2xl rounded-xl" aria-label="kalkulator">
+            <h1 class="text-white text-center text-3xl font-bold mb-4">Kalkulator</h1>
+            
+            <input id="display" class="display w-full h-16 p-3 rounded-lg border-none focus:outline-none" type="text" inputmode="numeric" readonly value="0">
+            
+            <section id="tombol2" class="tombol2 mt-6">
+                
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="7">7</button>
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="8">8</button>
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="9">9</button>
+                <button class="h-16 rounded-lg bg-calc-op-bg text-white font-bold text-xl cursor-pointer hover:bg-yellow-600 transition" data-val="/">/</button>
+                
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="4">4</button>
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="5">5</button>
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="6">6</button>
+                <button class="h-16 rounded-lg bg-calc-op-bg text-white font-bold text-xl cursor-pointer hover:bg-yellow-600 transition" data-val="*">*</button>
+                
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="1">1</button>
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="2">2</button>
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="3">3</button>
+                <button class="h-16 rounded-lg bg-calc-op-bg text-white font-bold text-xl cursor-pointer hover:bg-yellow-600 transition" data-val="-">-</button>
+            
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val="0">0</button>
+                <button class="h-16 rounded-lg bg-calc-btn-bg text-white font-bold text-xl cursor-pointer hover:bg-gray-600 transition" data-val=".">.</button>
+                <button class="h-16 rounded-lg bg-red-600 text-white font-bold text-xl cursor-pointer hover:bg-red-700 transition" data-val="clear" data-action="clear">C</button>
+                <button class="h-16 rounded-lg bg-calc-op-bg text-white font-bold text-xl cursor-pointer hover:bg-yellow-600 transition" data-val="+">+</button>
+
+                <button class="wide h-16 rounded-lg bg-primary-dark text-white font-bold text-2xl cursor-pointer hover:bg-green-800 transition" id="equal" data-action="equal">=</button>
+                
+                <footer class="wide text-center mt-3 text-gray-300 text-sm">
+                    Julius Kristian | 2582010
+                </footer>
+            </section>
+        </section>
+    </main>
+
+
+    <footer class="bg-gray-900 text-white p-6 mt-auto">
+        <div class="max-w-7xl mx-auto text-center text-sm">
+             &copy; <span id="currentYear"></span> Julius Kristian | Sistem Informasi UNAI
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const screen = document.getElementById("display");
+        const keys = document.getElementById("tombol2");
+
+        
+        const isLastCharOperator = (str) => /[\/*+-]$/.test(str);
+       
+        const isOperator = (char) => /[\/*+-]/.test(char);
+
+        function appendToScreen(char) {
+            const currentValue = screen.value;
+            
+           
+            if (currentValue === '0') {
+                if (char === '0') return; 
+                if (char === '.') {
+                    screen.value = '0.'; 
+                } else if (!isOperator(char)) {
+                    screen.value = char; 
+                } else {
+                    screen.value = currentValue + char; 
+                }
+                return;
+            }
+
+            
+            if (isOperator(char) && isLastCharOperator(currentValue)) {
+                
+                screen.value = currentValue.slice(0, -1) + char;
+                return;
+            }
+            
+        
+            const parts = currentValue.split(/[\/*+-]/);
+            const lastPart = parts[parts.length - 1];
+            if (char === '.' && lastPart.includes('.')) {
+                return;
+            }
+
+            // Tambahkan karakter
+            screen.value += char;
+        }
+
+        keys.addEventListener('click', (e) => {
+            const btn = e.target.closest('button');
+            if (!btn) return;
+
+            const action = btn.dataset.action;
+            const value = btn.dataset.val;
+
+            if (action === 'clear') {
+                screen.value = '0';
+                return;
+            }
+
+            if (action === 'equal') {
+                try {
+                   
+                    let expression = screen.value;
+                    while (isLastCharOperator(expression)) {
+                        expression = expression.slice(0, -1);
+                    }
+
+                
+                    const result = eval(expression); 
+                    
+                   
+                    if (isFinite(result)) {
+                        screen.value = String(result);
+                    } else {
+                        screen.value = "Error";
+                    }
+
+                } catch (error) {
+                    screen.value = "Error";
+                }
+                return;
+            }
+            
+
+            appendToScreen(value);
+        });
+    </script>
+</body>
+</html>

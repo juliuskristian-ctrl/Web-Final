@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julius Kristian - Kegiatan Non-Akademik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'page-bg': 'rgb(138, 218, 138)', 
+                        'primary-dark': '#047857', 
+                        'primary-light': '#10b981', 
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .body-bg {
+            background-color: rgb(138, 218, 138); 
+        }
+        .project-image {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="body-bg font-sans text-gray-800">
+
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-extrabold text-2xl text-primary-dark">
+                    J.K. Portfolio
+                </div>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">About</a>
+                    <a href="gallery.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-primary-dark text-white shadow-md">Gallery</a> 
+                    <a href="calculator.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Calculator</a>
+                    <a href="registration.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Registration</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-12 px-8 sm:px-16 lg:px-32"> 
+        
+        <header class="text-center mb-12 max-w-7xl mx-auto">
+             <h1 class="text-5xl font-extrabold text-primary-dark mb-4 border-b-4 border-primary-light pb-2">Kegiatan di Luar Perkuliahan</h1>
+        </header>
+
+        <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/4.jpg" alt="Penelusuran Gua Sipulus" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Caving</h3>
+                    <p class="text-sm text-gray-600">Penelurusan Gua Sipulus yang terletak di Desa Cibuntu, klapanunggal, Bogor.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/15.jpg" alt="Mendaki Burangrang" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Mendaki</h3>
+                    <p class="text-sm text-gray-600">Mendaki gunung Burangrang Via Komando dengan pemandangan langsung ke Situ Lembang.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/5.jpg" alt="Raftinig" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Rafting</h3>
+                    <p class="text-sm text-gray-600">Melakukan arung jeram di sungai Cianten, Bogor.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/9.jpg" alt="Banjir Bekasi" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Relawan</h3>
+                    <p class="text-sm text-gray-600">Membantu mengevakuasi warga dan membersihkan rumah warga pasca banjir di Bekasi.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/11.jpg" alt="Gua Kraton" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Caving</h3>
+                    <p class="text-sm text-gray-600">Melakukan rigging atau pembuatan lintasan untuk menuruni gua vertikal. Gua Kraton, Leuwikaret, Bogor.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/13.jpg" alt="Rock Climbing" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Rock Climbing</h3>
+                    <p class="text-sm text-gray-600">Melakukan pemanjatan tebing Anak Jeger di klapanunggal Bogor.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/12.jpg" alt="Menanam Pohon" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Menanam Pohon</h3>
+                    <p class="text-sm text-gray-600">Menanam pohon mangga Indramayu di depan sekretariat mapala di kampus.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/16.jpg" alt="Caving" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Pemetaan Gua</h3>
+                    <p class="text-sm text-gray-600">Melakukan pemetaan Gua Cangkuang, desa Cibuntu, klapanunggal, Bogor.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <img src="images/17.jpg" alt="Caving" class="project-image">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Caving</h3>
+                    <p class="text-sm text-gray-600">Perjalanan pulang ke basecamp setelah penelusuran gua, dengan membawa banyak peralatan besi dan tali.</p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="bg-gray-900 text-white p-6 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-sm">
+             &copy; <span id="currentYear"></span> Julius Kristian | Sistem Informasi UNAI
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
