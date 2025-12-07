@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
-        // Konfigurasi Tailwind untuk warna kustom (Konsisten dengan tema Hijau)
         tailwind.config = {
             theme: {
                 extend: {
@@ -24,14 +23,11 @@
         .body-bg {
             background-color: rgb(138, 218, 138); 
         }
-        /* Gaya error */
         .input-error {
-            border-color: #ef4444 !important; /* Warna merah */
+            border-color: #ef4444 !important;
             box-shadow: 0 0 0 2px #f87171 !important; 
         }
-        /* Kelas form-input yang dimodifikasi untuk border yang sangat terlihat */
         .form-input {
-             /* Menggunakan border-4 dan warna gray-500 untuk visibility tinggi */
              @apply w-full px-4 py-3 border-4 border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-primary-light transition;
         }
     </style>
@@ -107,7 +103,7 @@
 
     <footer class="bg-gray-900 text-white p-6 mt-auto">
         <div class="max-w-7xl mx-auto text-center text-sm">
-             &copy; <span id="currentYear"></span> Julius Kristian - C - 2025 | Sistem Informasi UNAI
+             &copy; <span id="currentYear"></span> Julius Kristian | Sistem Informasi UNAI
         </div>
     </footer>
     
