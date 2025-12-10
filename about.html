@@ -24,8 +24,9 @@
             background-color: rgb(138, 218, 138); 
         }
         
+        /* Mengurangi ukuran gambar di mobile (max-w-xs) dan di desktop (w-full) */
         .main-photo {
-            width: 300px; 
+            width: min(100%, 300px); /* 100% lebar container di mobile */
             height: 300px;
             object-fit: cover;
             border-radius: 1rem; 
@@ -45,13 +46,34 @@
                 <div class="flex-shrink-0 font-extrabold text-2xl text-primary-dark">
                     J.K. Portfolio
                 </div>
-                <div class="flex space-x-4">
+                <div class="hidden sm:flex space-x-4">
                     <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Home</a>
                     <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-primary-dark text-white shadow-md">About</a>
                     <a href="gallery.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Gallery</a> 
                     <a href="calculator.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Calculator</a>
                     <a href="registration.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Registration</a>
                 </div>
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-semibold bg-primary-dark text-white shadow-md">About</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Gallery</a> 
+                <a href="calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Calculator</a>
+                <a href="registration.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Registration</a>
             </div>
         </div>
     </nav>
@@ -59,18 +81,18 @@
     <main class="py-12 px-8 sm:px-16 lg:px-32"> 
         
         <header class="text-center mb-12 max-w-5xl mx-auto">
-             <h1 class="text-5xl font-extrabold text-primary-dark mb-4 border-b-4 border-primary-light pb-2">Tentang Julius Kristian</h1>
+             <h1 class="text-4xl sm:text-5xl font-extrabold text-primary-dark mb-4 border-b-4 border-primary-light pb-2">Tentang Julius Kristian</h1>
         </header>
 
-        <section class="bg-white p-10 rounded-xl shadow-2xl mb-16 max-w-5xl mx-auto">
+        <section class="bg-white p-6 sm:p-10 rounded-xl shadow-2xl mb-16 max-w-5xl mx-auto">
             <div class="md:flex md:space-x-10 items-start">
                 
-                <div class="mb-6 md:mb-0 flex-shrink-0">
-                    <img src="images/2.jpg" alt="Julius Kristian" class="main-photo">
+                <div class="mb-6 md:mb-0 flex-shrink-0 mx-auto md:mx-0 text-center">
+                    <img src="images/2.jpg" alt="Julius Kristian" class="main-photo mx-auto">
                 </div>
                 
                 <div>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">
                         Halo! Saya Julius Kristian, seorang mahasiswa Sistem Informasi yang memiliki gairah besar dalam menemukan efisiensi dan menghadirkan solusi. Bagi saya, teknologi bukan hanya alat, melainkan sebuah bahasa untuk mengkomunikasikan nilai bisnis. Saya memulai setiap proyek dengan pertanyaan, 'Apa masalah sebenarnya?', dan baru kemudian merancang jalur yang jelas menuju tujuan. Saya percaya, kemampuan analisis yang kuat, dikombinasikan dengan pemahaman mendalam tentang kebutuhan end-user, adalah kunci keberhasilan digital.
                     </p>
                     
@@ -88,24 +110,21 @@
         </section>
 
         <section class="text-center max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8">Kepribadian & Nilai yang Saya Pegang</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-8">Kepribadian & Nilai yang Saya Pegang</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <div class="bg-white creative-card p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-4xl mb-3 text-orange-500">🧐</div>
                     <h4 class="font-bold text-xl mb-2 text-gray-800">Pencari Jawaban (Curiosity)</h4>
                     <p class="text-sm text-gray-600">Saya tidak puas dengan jawaban di permukaan. Saya menggali hingga menemukan akar masalah, sebuah kunci dalam analisis yang mendalam.</p>
                 </div>
 
                 <div class="bg-white creative-card p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-4xl mb-3 text-red-500">🏔️</div>
                     <h4 class="font-bold text-xl mb-2 text-gray-800">Ketahanan (Resilience)</h4>
                     <p class="text-sm text-gray-600">Seperti mendaki gunung, proyek besar memerlukan ketahanan. Saya selalu siap menghadapi tantangan teknis dan hambatan.</p>
                 </div>
 
                 <div class="bg-white creative-card p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-4xl mb-3 text-blue-500">🗣️</div>
                     <h4 class="font-bold text-xl mb-2 text-gray-800">Komunikasi yang Jelas (Clarity)</h4>
                     <p class="text-sm text-gray-600">Mampu menerjemahkan geek-speak menjadi bahasa bisnis yang dimengerti semua orang adalah keahlian utama saya.</p>
                 </div>
@@ -122,6 +141,21 @@
     
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        button.addEventListener('click', () => {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true' || false;
+            button.setAttribute('aria-expanded', !isExpanded);
+            
+            menu.classList.toggle('hidden');
+            
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
     </script>
 </body>
 </html>

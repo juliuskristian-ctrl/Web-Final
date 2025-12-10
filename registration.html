@@ -28,7 +28,14 @@
             box-shadow: 0 0 0 2px #f87171 !important; 
         }
         .form-input {
-             @apply w-full px-4 py-3 border-4 border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-primary-light transition;
+             @apply w-full px-4 py-3 border-2 border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-primary-light transition;
+        }
+       
+        #registrationForm input:not(.input-error) {
+            border-width: 2px;
+        }
+        #registrationForm input.input-error {
+            border-width: 4px; 
         }
     </style>
 </head>
@@ -40,18 +47,39 @@
                 <div class="flex-shrink-0 font-extrabold text-2xl text-primary-dark">
                     J.K. Portfolio
                 </div>
-                <div class="flex space-x-4">
+                <div class="hidden sm:flex space-x-4">
                     <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Home</a>
                     <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">About</a>
                     <a href="gallery.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Gallery</a> 
                     <a href="calculator.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Calculator</a>
                     <a href="registration.html" class="px-3 py-2 rounded-lg text-sm font-semibold bg-primary-dark text-white shadow-md">Registration</a>
                 </div>
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">About</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Gallery</a> 
+                <a href="calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-green-50 hover:text-primary-dark transition">Calculator</a>
+                <a href="registration.html" class="block px-3 py-2 rounded-md text-base font-semibold bg-primary-dark text-white shadow-md">Registration</a>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow flex items-center justify-center py-10">
+    <main class="flex-grow flex items-center justify-center py-10 px-4 sm:px-0">
         <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-lg">
             <h1 class="text-3xl font-bold text-center text-primary-dark mb-8">Formulir Pendaftaran</h1>
             
@@ -110,6 +138,21 @@
     <script src="validation.js"></script>
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        button.addEventListener('click', () => {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true' || false;
+            button.setAttribute('aria-expanded', !isExpanded);
+            
+            menu.classList.toggle('hidden');
+            
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
     </script>
 </body>
 </html>
